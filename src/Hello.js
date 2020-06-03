@@ -4,16 +4,17 @@ import React from 'react';
 class Hello extends React.Component {
   state = {
     childSignal: "This is the child talking to parent",
-    toggled: false
+    toggled: true
   };
 send = () => {
   this.props.callbackFP(this.state.childSignal);
-  const v = document.getElementById('mBox');
-  v.style.visibility='visible';
-}
+};
 
 toggle = () => {
-  this.setState({toggled: !this.state.toggled})
+  this.setState({toggled: !this.state.toggled});
+  const v = document.getElementById('mBox');
+  v.style.visibility=!this.state.toggled? 'visible':'hidden';
+
 }
 render() {
   let styleToggle = this.state.toggled? "onToggle":"offToggle";
