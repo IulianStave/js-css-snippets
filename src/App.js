@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Hello from "./Hello";
+// import "./style.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
+class App extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      message: "",
+    };
+  }
+
+  // callback function - will be passed as a prop to child component Hello
+  getMessage = (HelloMessage) => {
+    this.setState({ message: HelloMessage });
+    document.getElementById("mBox").style.visibility = "visible";
+  };
+
+  render() {
+    return (
+      <div className="container">
+        <p className="note">
+          {" "}
+          The message box from below will be updated as soon as the message is
+          sent by Hello
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+        <Hello callbackFP={this.getMessage} />
+        {/* <div>{this.state.message === "initial" ? "" : this.state.message}</div> */}
+        <div id="mBox">
+          <p className="messageBox nav-fade">
+            {this.state.message ? this.state.message : " "}
+          </p>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
