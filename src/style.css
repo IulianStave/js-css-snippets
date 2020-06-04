@@ -7,21 +7,24 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 .note {
   font-style: italic;
   font-weight: 200;
-  font-size: 0.8em;
+  font-size: 1em;
 }
 
 .sendButton {
   color: blue;
   background-color: #ffffff;
-  height: 3em;
   border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
 }
+
 .messageBox {
   border: 1px solid #37ddc7;
-  padding: 20px;
+  padding: 10px;
   display: flex;
   flex-flow: row wrap;
   align-items: center;
@@ -29,8 +32,13 @@ body {
   width: 50%;
   border-radius: 5px;
   box-shadow: 2px 3px #dceedf;
+  margin: 10px;
 }
-
+.messageBox p {
+  font-style: italic;
+  font-weight: 200;
+  font-size: 1.2em;
+}
 .toggleButton {
   border: 1px solid;
   border-radius: 5px;
@@ -43,23 +51,32 @@ body {
   cursor: pointer;
   display: inline-block;
   transition-duration: 0.4s;
+  /* float: right; */
 }
-
+.wrapper-console {
+  display: flex;
+   flex-flow: column; 
+  /* align-items:center; */
+  width: 50%;
+}
 .onToggle {
   color: #37ddc7;
 }
+
 .offToggle {
   color: #b9d6d2;
   box-shadow: 1px 3px #ebeeec;
 }
-.nav-fade {
-  background: #fff;
+
+.fade {
+  background: rgb(247, 244, 244);
   padding: 3px 8px;
   display: inline-block;
   transition: background 0.25s ease-in-out;
   -moz-transition: background 0.25s ease-in-out;
   -webkit-transition: background 0.25s ease-in-out;
 }
-.nav-fade:hover {
+
+.fade:hover {
   background: #ddd;
 }

@@ -27,8 +27,8 @@ class App extends Component {
         </p>
         <Hello callbackFP={this.getMessage} />
         {/* <div>{this.state.message === "initial" ? "" : this.state.message}</div> */}
-        <div id="mBox">
-          <p className="messageBox nav-fade">
+        <div id="mBox" className="messageBox fade">
+          <p>
             {this.state.message ? this.state.message : " "}
           </p>
         </div>

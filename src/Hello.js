@@ -19,9 +19,10 @@ toggle = () => {
 render() {
   let styleToggle = this.state.toggled? "onToggle":"offToggle";
   return (
-    <div>
+    <div >
+     <div className="wrapper-console">
      <button className="sendButton" onClick={this.send}>Send now the message</button>
-     <div>
+     
      <button className={`toggleButton ${styleToggle}`} onClick={this.toggle}>
        {this.state.toggled? "ON":"OFF"}</button>
     </div>
