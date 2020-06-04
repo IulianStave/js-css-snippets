@@ -45,11 +45,8 @@ input[type="submit"]:disabled {
 }
 input[type="text"] {
   border: 1px solid #37ddc7;
-  font-size: 1em;
+  font-size: 1.5em;
   width: 30%;
-  /* visibility: visible; */
-  
-
   font-weight:150pt;
 }
 input[type="text"]:focus {
