@@ -10,23 +10,29 @@ class App extends Component {
       message: "",
       feedback: "",
       iputPending: "",
+      submitIsDisabled: true,
     };
   }
 
   // callback function - will be passed as a prop to child component Hello
   getMessage = (HelloMessage) => {
     this.setState({ message: HelloMessage });
-    document.getElementById("mBox").style.visibility = "visible";
+    // document.getElementById("mBox").style.visibility = "visible";
   };
 
   handleInput = (e) => {
-    this.setState({ inputPending: e.target.value });
+    if (e.target.value){
+      this.setState({ inputPending: e.target.value });
+      
+    }
   };
 
   saveFeedback = (event) => {
     event.preventDefault();
     let val = this.state.inputPending;
-    this.setState({ feedback: val, inputPending: "" });
+    if (this.state.inputPending) {
+      this.setState({ feedback: val, inputPending: "" });
+    }
   };
   showFeedback = () => {
     if (this.state.feedback) {
@@ -53,9 +59,10 @@ class App extends Component {
             <input
               id="feedback"
               type="text"
+              value={this.state.inputPending}
               onChange={this.handleInput}
             ></input>
-            <input type="submit" value="Send feedback" />
+            <input type="submit" disabled={!this.state.inputPending} value="Send feedback" />
           </form>
         </div>
       </div>
