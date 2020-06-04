@@ -21,6 +21,19 @@ body {
   padding: 10px;
   margin: 10px;
 }
+input[type="submit"] {
+    padding:7px; 
+    background:#ff3213; 
+    border:0 none;
+    color:white;
+    cursor:pointer;
+    -webkit-border-radius: 3px;
+    border-radius: 3px; 
+}
+
+input {
+  margin: 0 5px 0 5px;
+}
 
 .messageBox {
   border: 1px solid #37ddc7;
@@ -55,7 +68,7 @@ body {
 }
 .wrapper-console {
   display: flex;
-   flex-flow: column; 
+  flex-flow: column;
   /* align-items:center; */
   width: 50%;
 }

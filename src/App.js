@@ -8,6 +8,8 @@ class App extends Component {
 
     this.state = {
       message: "",
+      feedback: "",
+      iputPending: "",
     };
   }
 
@@ -17,6 +19,20 @@ class App extends Component {
     document.getElementById("mBox").style.visibility = "visible";
   };
 
+  handleInput = (e) => {
+    this.setState({ inputPending: e.target.value });
+  };
+
+  saveFeedback = (event) => {
+    event.preventDefault();
+    let val = this.state.inputPending;
+    this.setState({ feedback: val, inputPending: "" });
+  };
+  showFeedback = () => {
+    if (this.state.feedback) {
+      return <div>{`Feedback: ${this.state.feedback} Thanks`}</div>;
+    }
+  }
   render() {
     return (
       <div className="container">
@@ -28,9 +44,19 @@ class App extends Component {
         <Hello callbackFP={this.getMessage} />
         {/* <div>{this.state.message === "initial" ? "" : this.state.message}</div> */}
         <div id="mBox" className="messageBox fade">
-          <p>
-            {this.state.message ? this.state.message : " "}
-          </p>
+          <p>{this.state.message ? this.state.message : " "}</p>
+          <p>{this.showFeedback()}</p>
+        </div>
+        <div>
+          <form onSubmit={this.saveFeedback}>
+            <label htmlFor="feedback">Does it work?&nbsp;</label>
+            <input
+              id="feedback"
+              type="text"
+              onChange={this.handleInput}
+            ></input>
+            <input type="submit" value="Send feedback"/>
+          </form>
         </div>
       </div>
     );
