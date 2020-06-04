@@ -22,13 +22,13 @@ body {
   margin: 10px;
 }
 input[type="submit"] {
-    padding:7px; 
-    background:#ff3213; 
-    border:0 none;
-    color:white;
-    cursor:pointer;
-    -webkit-border-radius: 3px;
-    border-radius: 3px; 
+  padding: 7px;
+  background: #ff3213;
+  border: 0 none;
+  color: white;
+  cursor: pointer;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
 }
 
 input {

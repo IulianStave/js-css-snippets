@@ -32,7 +32,7 @@ class App extends Component {
     if (this.state.feedback) {
       return <div>{`Feedback: ${this.state.feedback} Thanks`}</div>;
     }
-  }
+  };
   render() {
     return (
       <div className="container">
@@ -55,7 +55,7 @@ class App extends Component {
               type="text"
               onChange={this.handleInput}
             ></input>
-            <input type="submit" value="Send feedback"/>
+            <input type="submit" value="Send feedback" />
           </form>
         </div>
       </div>
