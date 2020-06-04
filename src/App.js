@@ -21,10 +21,7 @@ class App extends Component {
   };
 
   handleInput = (e) => {
-    if (e.target.value){
       this.setState({ inputPending: e.target.value });
-      
-    }
   };
 
   saveFeedback = (event) => {
@@ -36,7 +33,7 @@ class App extends Component {
   };
   showFeedback = () => {
     if (this.state.feedback) {
-      return <div>{`Feedback: ${this.state.feedback} Thanks`}</div>;
+      return <div>{`Feedback: ${this.state.feedback}`}</div>;
     }
   };
   render() {
