@@ -6,12 +6,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 14px;
 }
 
 .note {
   font-style: italic;
-  font-weight: 200;
-  font-size: 1em;
+  font-weight: 400;
+  font-size: 12px;
 }
 
 .sendButton {
@@ -40,18 +41,15 @@ input[type="submit"]:disabled {
 }
 .show {
   visibility: visible;
-  font-size:.5em;
-  font-weight:150px;
+  font-weight: 500;
 }
 input[type="text"] {
   border: 1px solid #37ddc7;
-  font-size: 1.5em;
-  width: 30%;
-  font-weight:150pt;
+  font-weight: 400;
+  color: hsl(0, 0%, 45%);
 }
 input[type="text"]:focus {
   border: 1px solid #04bda4;
-  /* height: 2em; */
 }
 
 input {
@@ -73,7 +71,6 @@ input {
 .messageBox p {
   font-style: italic;
   font-weight: 200;
-  font-size: 1.2em;
 }
 .toggleButton {
   border: 1px solid;
@@ -81,7 +78,7 @@ input {
   padding: 10px;
   background-color: #ffffff;
   box-shadow: 2px 4px #dceedf;
-  width: 10em;
+  width: 20%;
   margin: 10px;
   text-decoration: none;
   cursor: pointer;
