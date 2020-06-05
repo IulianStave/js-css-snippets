@@ -36,11 +36,24 @@ class App extends Component {
       return <div>{`Feedback: ${this.state.feedback}`}</div>;
     }
   };
+
+  getOS () {
+    var OSName="Unknown OS";
+if (navigator.appVersion.indexOf("Win")!==-1) OSName="Windows";
+if (navigator.appVersion.indexOf("Mac")!==-1) OSName="MacOS";
+if (navigator.appVersion.indexOf("X11")!==-1) OSName="UNIX";
+if (navigator.appVersion.indexOf("Linux")!==-1) OSName="Linux";
+
+ return 'Your OS: '+OSName;
+  }
   render() {
     return (
       <div className="container">
         <p className="note">
-          {" "}
+          <p>{this.getOS()}</p>
+          <p>App version: {navigator.appVersion}</p>
+          {/* <p>{window.navigator.platform.indexOf('Linux')}</p> */}
+          <p>Platform: {window.navigator.platform}</p>
           The message box from below will be updated as soon as the message is
           sent by Hello
         </p>
