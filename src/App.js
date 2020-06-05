@@ -21,7 +21,7 @@ class App extends Component {
   };
 
   handleInput = (e) => {
-      this.setState({ inputPending: e.target.value });
+    this.setState({ inputPending: e.target.value });
   };
 
   saveFeedback = (event) => {
@@ -37,14 +37,14 @@ class App extends Component {
     }
   };
 
-  getOS () {
-    var OSName="Unknown OS";
-if (navigator.appVersion.indexOf("Win")!==-1) OSName="Windows";
-if (navigator.appVersion.indexOf("Mac")!==-1) OSName="MacOS";
-if (navigator.appVersion.indexOf("X11")!==-1) OSName="UNIX";
-if (navigator.appVersion.indexOf("Linux")!==-1) OSName="Linux";
+  getOS() {
+    var OSName = "Unknown OS";
+    if (navigator.platform.indexOf("Win") !== -1) OSName = "Windows";
+    if (navigator.platform.indexOf("Mac") !== -1) OSName = "MacOS";
+    if (navigator.platform.indexOf("X11") !== -1) OSName = "UNIX";
+    if (navigator.platform.indexOf("Linux") !== -1) OSName = "Linux";
 
- return 'Your OS: '+OSName;
+    return "Your OS: " + OSName;
   }
   render() {
     return (
@@ -72,7 +72,11 @@ if (navigator.appVersion.indexOf("Linux")!==-1) OSName="Linux";
               value={this.state.inputPending}
               onChange={this.handleInput}
             ></input>
-            <input type="submit" disabled={!this.state.inputPending} value="Send feedback" />
+            <input
+              type="submit"
+              disabled={!this.state.inputPending}
+              value="Send feedback"
+            />
           </form>
         </div>
       </div>
