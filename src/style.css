@@ -22,6 +22,22 @@ body {
   padding: 10px;
   margin: 10px;
 }
+.sendButton:hover,
+.sendButton:focus {
+  color: #9555af;
+  border-color: currentColor;
+  background-color: white;
+}
+.sendButton {
+  /* ... */
+  /* all browsers: remove the default outline since
+        we are rolling our own focus styles */
+  outline: none;
+}
+/* Firefox: removes the inner border shown on focus */
+.sendButton::-moz-focus-inner {
+  border: none;
+}
 input[type="submit"] {
   padding: 7px;
   background: #ff3213;
@@ -59,10 +75,10 @@ input {
 .messageBox {
   border: 1px solid #37ddc7;
   padding: 10px;
-  display: flex;
-  flex-flow: row wrap;
+  /* display: flex;
+  flex-flow: column; */
   align-items: center;
-  height: 5em;
+
   width: 50%;
   border-radius: 5px;
   box-shadow: 2px 3px #dceedf;
@@ -70,7 +86,7 @@ input {
 }
 .messageBox p {
   font-style: italic;
-  font-weight: 200;
+  font-weight: 400;
 }
 .toggleButton {
   border: 1px solid;
@@ -80,11 +96,14 @@ input {
   box-shadow: 2px 4px #dceedf;
   width: 20%;
   margin: 10px;
-  text-decoration: none;
+  /* text-decoration: none; */
   cursor: pointer;
   display: inline-block;
   transition-duration: 0.4s;
   /* float: right; */
+}
+.toggleButton:focus {
+  color: rgb(32, 180, 44);
 }
 .wrapper-console {
   display: flex;
